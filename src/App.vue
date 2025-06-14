@@ -1,5 +1,6 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+import defaultImage from './assets/gitpink.png'
 </script>
 
 <template>
@@ -11,7 +12,9 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <img :src="defaultImage" alt="pagesImage" />
+
+  <HelloWorld msg="Vite + GH-Pages" />
 </template>
 
 <style scoped>
