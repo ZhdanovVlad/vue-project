@@ -1,28 +1,17 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '@/components/HomePage.vue';
 import Catalog from '@/components/Catalog.vue';
 import ItemDetails from '@/components/ItemDetails.vue';
 
-Vue.use(Router);
+const routes = [
+  { path: '/', component: HomePage },
+  { path: '/catalog', component: Catalog },
+  { path: '/details/:id', component: ItemDetails, props: true },
+];
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HomePage',
-      component: HomePage,
-    },
-    {
-      path: '/catalog',
-      name: 'Catalog',
-      component: Catalog,
-    },
-    {
-      path: '/details/:id',
-      name: 'ItemDetails',
-      component: ItemDetails,
-      props: true,
-    },
-  ],
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
 });
+
+export default router;

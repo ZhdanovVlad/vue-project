@@ -27,6 +27,7 @@ export default {
     return {
       items: items,
       searchQuery: '',
+      items: catalogItems,
     };
   },
   computed: {
